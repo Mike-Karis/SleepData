@@ -64,7 +64,7 @@ namespace SleepData
                 string toRead = File.ReadAllText("data.txt");
                 dataSplit = toRead.Split(',');
                 for(int i =0; i<dataSplit.Length-1;i++){
-                    Console.WriteLine(dataSplit[i]+" "+i);
+                    //Console.WriteLine(dataSplit[i]+" "+i);
                     if( (i+1) % 2==0){
                         hoursSlept.Add(dataSplit[i]);                        
                     }
@@ -72,8 +72,16 @@ namespace SleepData
                         datesSlept.Add(dataSplit[i]);
                     }
                 }
-               for(int j=0; j<datesSlept.Count;j++){
-               Console.WriteLine(datesSlept[j]);}
+            //    for(int j=0; j<datesSlept.Count;j++){
+            //    Console.WriteLine(datesSlept[j]);}
+
+               for(int q=0; q<hoursSlept.Count;q++){
+                   Console.WriteLine("Week of {0}",datesSlept[q]);
+                   Console.WriteLine("Mo Tu We Th Fr Sa Su");
+                   Console.WriteLine("-- -- -- -- -- -- --");
+                   Console.WriteLine(hoursSlept[q]);
+
+               }
 
             }
         }
