@@ -52,7 +52,7 @@ namespace SleepData
                     }
                     // M/d/yyyy,#|#|#|#|#|#|#
                     //Console.WriteLine($"{dataDate:M/d/yy},{string.Join("|", hours)}");
-                    sw.WriteLine($"{dataDate:M/d/yyyy},{string.Join("|", hours)},");
+                    sw.WriteLine($",{dataDate:M/d/yyyy},{string.Join("|", hours)}");
                     // add 1 week to date
                     dataDate = dataDate.AddDays(7);
                 }
@@ -75,11 +75,12 @@ namespace SleepData
             //    for(int j=0; j<datesSlept.Count;j++){
             //    Console.WriteLine(datesSlept[j]);}
 
-               for(int q=0; q<hoursSlept.Count;q++){
-                   Console.WriteLine("Week of {0}",datesSlept[q]);
+               for(int q=0; q<datesSlept.Count;q++){
+                   Console.WriteLine("Week of {0:dd:MM:yyyy}",datesSlept[q]);
+                   Console.WriteLine("week of {0}",datesSlept[q]);
                    Console.WriteLine("Mo Tu We Th Fr Sa Su");
                    Console.WriteLine("-- -- -- -- -- -- --");
-                   Console.WriteLine(hoursSlept[q]);
+                   Console.WriteLine("hours of sleep {0}",hoursSlept[q]);
 
                }
 
