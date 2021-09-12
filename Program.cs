@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-
+using System.Collections.Generic;
 namespace SleepData
 {
     class Program
@@ -8,6 +8,7 @@ namespace SleepData
         //This program is used to track sleep data
         static void Main(string[] args)
         {
+            string[] dataSplit;// = phrase.Split(' ');
               // ask for input
             Console.WriteLine("Enter 1 to create data file.");
             Console.WriteLine("Enter 2 to parse data.");
@@ -48,7 +49,7 @@ namespace SleepData
                     }
                     // M/d/yyyy,#|#|#|#|#|#|#
                     //Console.WriteLine($"{dataDate:M/d/yy},{string.Join("|", hours)}");
-                    sw.WriteLine($"{dataDate:M/d/yyyy},{string.Join("|", hours)}");
+                    sw.WriteLine($"{dataDate:M/d/yyyy},{string.Join("|", hours)},");
                     // add 1 week to date
                     dataDate = dataDate.AddDays(7);
                 }
@@ -57,6 +58,9 @@ namespace SleepData
             else if (resp == "2")
             {
                 // TODO: parse data file
+                string toRead = File.ReadAllText("data.txt");
+                dataSplit = toRead.Split(',');
+                Console.WriteLine(dataSplit[0]);
 
             }
         }
