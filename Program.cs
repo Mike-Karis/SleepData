@@ -12,6 +12,7 @@ namespace SleepData
             string[] dataSplit;// = phrase.Split(' ');
             var datesSlept= new List<string>();
             var hoursSlept= new List<string>();
+            string[] daySplit;
               // ask for input
             Console.WriteLine("Enter 1 to create data file.");
             Console.WriteLine("Enter 2 to parse data.");
@@ -79,7 +80,11 @@ namespace SleepData
                    Console.WriteLine("Week of {0:dd:MM:yyyy}",datesSlept[q]);
                    Console.WriteLine("Mo Tu We Th Fr Sa Su");
                    Console.WriteLine("-- -- -- -- -- -- --");
-                   Console.WriteLine(hoursSlept[q]);
+                   string toSplit = hoursSlept[q];
+                   daySplit = toSplit.Split('|');
+                   for(int z=0;z<daySplit.Length;z++){
+                   Console.Write(daySplit[z]+" ");}
+                   //Console.WriteLine(hoursSlept[q]);
 
                }
 
