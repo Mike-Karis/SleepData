@@ -63,9 +63,9 @@ namespace SleepData
                 // TODO: parse data file
                 string toRead = File.ReadAllText("data.txt");
                 dataSplit = toRead.Split(',');
-                for(int i =0; i<dataSplit.Length-1;i++){
+                for(int i =1; i<dataSplit.Length;i++){
                     //Console.WriteLine(dataSplit[i]+" "+i);
-                    if( (i+1) % 2==0){
+                    if( (i) % 2==0){
                         hoursSlept.Add(dataSplit[i]);                        
                     }
                     else{
@@ -77,10 +77,9 @@ namespace SleepData
 
                for(int q=0; q<datesSlept.Count;q++){
                    Console.WriteLine("Week of {0:dd:MM:yyyy}",datesSlept[q]);
-                   Console.WriteLine("week of {0}",datesSlept[q]);
                    Console.WriteLine("Mo Tu We Th Fr Sa Su");
                    Console.WriteLine("-- -- -- -- -- -- --");
-                   Console.WriteLine("hours of sleep {0}",hoursSlept[q]);
+                   Console.WriteLine(hoursSlept[q]);
 
                }
 
