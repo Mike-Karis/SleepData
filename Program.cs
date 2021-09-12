@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+
 namespace SleepData
 {
     class Program
@@ -9,6 +10,8 @@ namespace SleepData
         static void Main(string[] args)
         {
             string[] dataSplit;// = phrase.Split(' ');
+            var datesSlept= new List<string>();
+            var hoursSlept= new List<string>();
               // ask for input
             Console.WriteLine("Enter 1 to create data file.");
             Console.WriteLine("Enter 2 to parse data.");
@@ -60,7 +63,17 @@ namespace SleepData
                 // TODO: parse data file
                 string toRead = File.ReadAllText("data.txt");
                 dataSplit = toRead.Split(',');
-                Console.WriteLine(dataSplit[0]);
+                for(int i =0; i<dataSplit.Length-1;i++){
+                    Console.WriteLine(dataSplit[i]+" "+i);
+                    if( (i+1) % 2==0){
+                        hoursSlept.Add(dataSplit[i]);                        
+                    }
+                    else{
+                        datesSlept.Add(dataSplit[i]);
+                    }
+                }
+               for(int j=0; j<datesSlept.Count;j++){
+               Console.WriteLine(datesSlept[j]);}
 
             }
         }
